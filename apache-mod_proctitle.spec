@@ -3,7 +3,7 @@
 Summary:	Apache module: set process name to currently serverd virtual host
 Name:		apache-mod_%{mod_name}
 Version:	0.1
-Release:	0.20080707
+Release:	0.20080707.1
 License:	Apache v2.0
 Group:		Networking/Daemons
 Source0:	mod_proctitle.c
