@@ -49,7 +49,7 @@ static void apache_setproctitle(char *arg) {
 }
 
 static int apache_proctitle_enter (request_rec *r) {
-	/* We only call change_hat for the main request, not subrequests */
+	/* We only change title for main request, not subrequests */
 	if (r->main) 
 		return OK;
 	apache_setproctitle(r->server->server_hostname);
