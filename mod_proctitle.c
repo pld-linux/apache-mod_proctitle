@@ -15,6 +15,8 @@
 #include "apr_strings.h"
 #include "apr_lib.h"
 
+#include <dlfcn.h>
+
 #define MAXTITLE 1024
 
 static char *title_progname_full;
