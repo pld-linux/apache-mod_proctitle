@@ -5,7 +5,7 @@ Name:		apache-mod_%{mod_name}
 Version:	0.1
 Release:	0.20080707.1
 License:	Apache v2.0
-Group:		Networking/Daemons
+Group:		Networking/Daemons/HTTP
 Source0:	mod_proctitle.c
 # Source0-md5:	e4974a4f7c7c7848eca8748c91c24062
 BuildRequires:	%{apxs}
