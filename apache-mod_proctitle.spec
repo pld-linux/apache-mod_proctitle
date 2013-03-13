@@ -3,7 +3,7 @@
 Summary:	Apache module: set process name to currently serverd virtual host
 Name:		apache-mod_%{mod_name}
 Version:	0.4
-Release:	1
+Release:	2
 License:	Apache v2.0
 Group:		Networking/Daemons/HTTP
 Source0:	https://github.com/stass/mod_proctitle/archive/0.4.tar.gz
@@ -36,6 +36,7 @@ changes process name to currently served virtual host.
 %{__automake}
 
 CPPFLAGS="%{rpmcppflags} -D__unused='__attribute__ ((__unused__))'" \
+APXS="%{apxs}" \
 %configure
 %{__make}
 
