@@ -3,11 +3,10 @@
 Summary:	Apache module: set process name to currently serverd virtual host
 Name:		apache-mod_%{mod_name}
 Version:	0.1
-Release:	0.20080707.1
+Release:	0.20080707.2
 License:	Apache v2.0
 Group:		Networking/Daemons/HTTP
 Source0:	mod_proctitle.c
-# Source0-md5:	e4974a4f7c7c7848eca8748c91c24062
 BuildRequires:	%{apxs}
 BuildRequires:	apache-devel >= 2.0
 BuildRequires:	rpmbuild(macros) >= 1.268
