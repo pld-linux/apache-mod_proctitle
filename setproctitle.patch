@@ -1,0 +1,25 @@
+diff -urN mod_proctitle-0.4.org/src/Makefile.am mod_proctitle-0.4/src/Makefile.am
+--- mod_proctitle-0.4.org/src/Makefile.am	2011-08-24 10:53:02.000000000 +0200
++++ mod_proctitle-0.4/src/Makefile.am	2013-03-13 17:25:00.638504741 +0100
+@@ -5,7 +5,7 @@
+ libdir= @APACHE_MODULEDIR@
+ mod_proctitle_la_LDFLAGS=-module -avoid-version
+ 
+-LIBS=@APR_LDFLAGS@ @APU_LDFLAGS@ @APR_LIBS@ @APU_LIBS@
++LIBS=@APR_LDFLAGS@ @APU_LDFLAGS@ @APR_LIBS@ @APU_LIBS@ -lsetproctitle
+ AM_CFLAGS=@APR_INCLUDES@ @APU_INCLUDES@ -I@APACHE_INCLUDEDIR@
+ 
+ mod_proctitle_la_SOURCES = mod_proctitle.c
+diff -urN mod_proctitle-0.4.org/src/mod_proctitle.c mod_proctitle-0.4/src/mod_proctitle.c
+--- mod_proctitle-0.4.org/src/mod_proctitle.c	2011-08-24 10:53:02.000000000 +0200
++++ mod_proctitle-0.4/src/mod_proctitle.c	2013-03-13 17:24:50.578262647 +0100
+@@ -49,6 +49,9 @@
+ #include <http_core.h>
+ #include <http_request.h>
+ 
++#include <setproctitle.h>
++#define __unused __attribute__ ((__unused__))
++
+ #undef PACKAGE_BUGREPORT /* damn apache */
+ #undef PACKAGE_NAME
+ #undef PACKAGE_STRING
