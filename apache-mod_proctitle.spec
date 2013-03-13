@@ -3,8 +3,8 @@
 Summary:	Apache module: set process name to currently serverd virtual host
 Name:		apache-mod_%{mod_name}
 Version:	0.4
-Release:	2
-License:	Apache v2.0
+Release:	3
+License:	BSD
 Group:		Networking/Daemons/HTTP
 Source0:	https://github.com/stass/mod_proctitle/archive/0.4.tar.gz
 # Source0-md5:	83043432da02f0ebf6de4badbe404dcd
@@ -49,7 +49,7 @@ install -d $RPM_BUILD_ROOT%{_sysconfdir}
 
 cat > $RPM_BUILD_ROOT%{_sysconfdir}/90_mod_%{mod_name}.conf << 'EOF'
 LoadModule %{mod_name}_module modules/mod_%{mod_name}.so
-ProctitileEnable On
+ProctitleEnable On
 # ProctitleUriSep ::
 EOF
 
@@ -66,5 +66,6 @@ fi
 
 %files
 %defattr(644,root,root,755)
+%doc AUTHORS README 
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/*_mod_%{mod_name}.conf
 %attr(755,root,root) %{_pkglibdir}/mod_proctitle.so
