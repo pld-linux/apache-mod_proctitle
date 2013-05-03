@@ -3,7 +3,7 @@
 Summary:	Apache module: set process name to currently serverd virtual host
 Name:		apache-mod_%{mod_name}
 Version:	0.4
-Release:	3
+Release:	4
 License:	BSD
 Group:		Networking/Daemons/HTTP
 Source0:	https://github.com/stass/mod_proctitle/archive/0.4.tar.gz
