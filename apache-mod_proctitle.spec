@@ -26,7 +26,7 @@ changes process name to currently served virtual host.
 
 %prep
 %setup -q -n mod_%{mod_name}-%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__libtoolize}
